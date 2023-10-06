@@ -1,6 +1,3 @@
--- Set the mapleader to space
-vim.g.mapleader = " "
-
 -- Function for *noremaps
 function noremap(mode, mapping, action)
     options = {
@@ -31,6 +28,7 @@ noremap("n", "<leader>tm", ":tabmove")
 noremap("n", "<leader>t<leader>", ":tabnext<CR>")
 
 -- General remaps
+noremap("n", "L", ":set list!<CR>") -- Enables list mode
 noremap("n", "<leader>q", vim.cmd.quit) -- Quit the buffer
 noremap("n", "<leader>s", vim.cmd.noh) -- Remove highlights for search
 noremap("n", "<leader>w", ":w!<cr>") -- Save the buffer
@@ -42,8 +40,6 @@ noremap("n", "<leader>f", "<c-]>") -- Follow a link(vim help)
 noremap("n", "<leader>b", "<c-o>") -- Go back(vim help)
 noremap("n", "<leader>n", ":bn<CR>") -- Go to next buffer
 noremap("n", "<leader>i", ":bp<CR>") -- Go to previous buffer
-noremap("n", "<leader>u", "<c-U>") -- Scroll one page up
-noremap("n", "<leader>d", "<c-D>") -- Scroll one page down
 noremap("n", "<leader>p", "\"0p") -- Pastes the last yanked text after the cursor
 noremap("n", "<leader>P", "\"0P") -- Pastes the last yanked text before the cursor
 noremap("i", "jk", "<Esc>") -- Remap jk to Esc
@@ -54,7 +50,7 @@ noremap("t", "jk", "<C-\\><C-n>") -- Terminal mode jk to Esc
 noremap("v", "<A-j>", ":m '>+1<CR>gv=gv") -- Shifts a range of lines down
 noremap("v", "<A-k>", ":m '<-2<CR>gv=gv") -- Shifts a range of lines up
 noremap("c", "w!!", "w !sudo tee > /dev/null %") -- When you forget to open the file in sudo mode
-
+noremap("c", "help", "vert help")
 --[[
     TODO
 noremap("t", "<leader>ve", ":vsplit $HOME/.vim/.vimrc<CR>")
