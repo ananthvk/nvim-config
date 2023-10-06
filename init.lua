@@ -5,3 +5,5 @@ require("conf.ignores")
 require("conf.abbrev")
 
 require("lazy").setup("plugins")
+require("conf.colorscheme")
+require("telescope")
