@@ -1,5 +1,6 @@
 -- Set the mapleader to space
 vim.g.mapleader = " "
+vim.g.localmapleader = " "
 -- Set encoding
 vim.opt.encoding = "utf-8"
 
@@ -45,6 +46,7 @@ vim.opt.ruler = true -- set the ruler, the line and column number display
 vim.opt.confirm = true -- Ask for confirmation when closing a unsaved file
 vim.opt.laststatus = 2 -- Always show the status bar.
 vim.opt.splitright = true -- Always split to the right
+vim.opt.splitbelow = true -- Split below for horizontal splits
 vim.opt.mouse = vim.opt.mouse + 'a' -- Enables mouse
 vim.opt.clipboard = vim.opt.clipboard + "unnamedplus" -- Uses system's clipboard
 vim.g.loaded_matchparen = 1
