@@ -42,3 +42,6 @@ luac.out
 # previous vimrc
 vimold
 .vimrc
+
+# cache and other files
+.persist
