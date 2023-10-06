@@ -48,7 +48,8 @@ vim.opt.splitright = true -- Always split to the right
 vim.opt.mouse = vim.opt.mouse + 'a' -- Enables mouse
 vim.opt.clipboard = vim.opt.clipboard + "unnamedplus" -- Uses system's clipboard
 vim.g.loaded_matchparen = 1
-
+vim.opt.shortmess = "aI" -- Ignore file related enter prompts
+vim.opt.ffs = {unix, dos, mac} -- Set unix as default file type
 -- Options that are not available
 -- vim.opt.nocp = true -- Dont behave in compatible vim mode
 -- vim.opt.noerrorbells = true -- Disable beep sound on error

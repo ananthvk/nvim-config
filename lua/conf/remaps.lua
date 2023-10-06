@@ -51,17 +51,6 @@ noremap("v", "<A-j>", ":m '>+1<CR>gv=gv") -- Shifts a range of lines down
 noremap("v", "<A-k>", ":m '<-2<CR>gv=gv") -- Shifts a range of lines up
 noremap("c", "w!!", "w !sudo tee > /dev/null %") -- When you forget to open the file in sudo mode
 noremap("c", "help", "vert help")
---[[
-    TODO
-noremap("t", "<leader>ve", ":vsplit $HOME/.vim/.vimrc<CR>")
-noremap("t", "<leader>vs", ":source $HOME/.vim/.vimrc<CR>")
-" Git remappings
-nnoremap <leader>ga :Git add -A<CR>
-nnoremap <leader>gc :Git commit -m "Changes"<CR>
-nnoremap <leader>gp :Git push -u origin main<CR>
-
-" S will search/replace the word under the cursor
-nnoremap S :%s/\<<C-r><C-w>\>//g<Left><Left><C-r><C-w>
-" Pastes the content in the 0 register, which contains the last yanked
-" text even if other deletes are performed.
---]]
+noremap("n", "<leader>mm", "mmHmt:%s/<C-V><cr>//ge<cr>'tzt'm") -- Remove the Windows ^M - when the encodings gets messed up
+noremap("n", "<leader>ms", ":let _s=@/<Bar>:%s/\\s\\+$//e<Bar>:let @/=_s<Bar><CR>") -- Remove trailing whitespaces
+noremap("n", "S", ":%s/\\<<C-r><C-w>\\>//g<Left><Left><C-r><C-w>") -- S will search/replace the word under the cursor

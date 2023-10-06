@@ -1,0 +1,7 @@
+vim.cmd("iabbrev adn and")
+vim.cmd("iabbrev gpath <C-r>=expand('%:p')<CR>")
+vim.cmd("iabbrev gdate <C-r>=strftime('%F')<CR>")
+vim.cmd("iabbrev gtime <C-r>=strftime('%H:%M:%S')<CR>")
+vim.cmd("iabbrev gdt <C-r>=strftime('%F %H:%M:%S')<CR>")
+vim.cmd("iabbrev teh the")
+vim.cmd("iabbrev tehn then")
