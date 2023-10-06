@@ -1,1 +1,1 @@
-require("conf.keymaps")
+require("conf.remaps")
