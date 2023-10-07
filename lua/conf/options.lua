@@ -54,6 +54,9 @@ vim.opt.termguicolors = true
 vim.opt.background = 'dark'
 vim.opt.scrolloff = 5 -- Have at least five columns on both sides of the cursor
 vim.opt.signcolumn="yes" -- Prevent transitions when sign column has text or not(For example errors detected LSP)
+-- Colorscheme to use if no plugins are installed
+vim.o.background = 'dark'
+vim.cmd[[colorscheme habamax]]
 -- Options that are not available
 -- vim.opt.nocp = true -- Dont behave in compatible vim mode
 -- vim.opt.noerrorbells = true -- Disable beep sound on error
