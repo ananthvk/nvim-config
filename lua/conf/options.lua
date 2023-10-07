@@ -51,9 +51,11 @@ vim.opt.mouse = vim.opt.mouse + 'a' -- Enables mouse
 vim.opt.clipboard = vim.opt.clipboard + "unnamedplus" -- Uses system's clipboard
 vim.g.loaded_matchparen = 1
 vim.opt.shortmess = "aI" -- Ignore file related enter prompts
-vim.opt.ffs = {unix, dos, mac} -- Set unix as default file type
+vim.opt.ffs = {"unix", "dos", "mac"} -- Set unix as default file type
 vim.opt.termguicolors = true
 vim.opt.background = 'dark'
+vim.opt.scrolloff = 5 -- Have at least five columns on both sides of the cursor
+vim.opt.signcolumn="yes" -- Prevent transitions when sign column has text or not(For example errors detected LSP)
 -- Options that are not available
 -- vim.opt.nocp = true -- Dont behave in compatible vim mode
 -- vim.opt.noerrorbells = true -- Disable beep sound on error
