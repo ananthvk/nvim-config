@@ -1,6 +1,7 @@
 # [nvim-config](https://github.com/ananthvk/nvim-config)
 These are my dotfiles for neovim written in pure Lua.
-My dotfiles for vim/neovim in vimscript is [here](https://github.com/ananthvk/vim-config)
+<br>
+My dotfiles for vim/neovim in vimscript are [here](https://github.com/ananthvk/vim-config)
 
 ## Features
 * Uses [lazy.nvim](https://github.com/folke/lazy.nvim) as package manager
