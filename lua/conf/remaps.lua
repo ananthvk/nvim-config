@@ -46,7 +46,6 @@ noremap("i", "jk", "<Esc>") -- Remap jk to Esc
 noremap("i", "<c-e>", "<c-o>A") -- Goes to the end of line from insert mode
 noremap("i", "<c-d>", "<Esc>ddi") -- Deletes the current line from insert mode
 noremap("i", "<c-space>", "<c-n>") -- ???
-noremap("t", "jk", "<C-\\><C-n>") -- Terminal mode jk to Esc
 noremap("v", "<A-j>", ":m '>+1<CR>gv=gv") -- Shifts a range of lines down
 noremap("v", "<A-k>", ":m '<-2<CR>gv=gv") -- Shifts a range of lines up
 noremap("c", "w!!", "w !sudo tee > /dev/null %") -- When you forget to open the file in sudo mode
@@ -56,3 +55,7 @@ noremap("n", "<leader>ms", ":let _s=@/<Bar>:%s/\\s\\+$//e<Bar>:let @/=_s<Bar><CR
 noremap("n", "S", ":%s/\\<<C-r><C-w>\\>//g<Left><Left><C-r><C-w>") -- S will search/replace the word under the cursor
 noremap("n", "<leader>e", ":Ex<CR>")
 noremap("n", "<leader>ve", ":Ex "..vim.fn.stdpath("config").."<CR>")
+
+-- Changed this to jj because of conflict with jk of zsh vi mode
+noremap("t", "jj", "<C-\\><C-n>") -- Terminal mode jk to Esc
+
