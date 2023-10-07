@@ -1,7 +1,5 @@
-require("conf.bootstrap")
 require("conf.options")
+require("conf.bootstrap")
 require("conf.remaps")
 require("conf.ignores")
 require("conf.abbrev")
-require("setup-lazy")
-

@@ -1,6 +1,3 @@
--- Set the mapleader to space
-vim.g.mapleader = " "
-vim.g.localmapleader = " "
 -- Set encoding
 vim.opt.encoding = "utf-8"
 
@@ -38,7 +35,8 @@ vim.opt.cursorline = true -- Highlight the current cursor line so that it is eas
 vim.opt.wildmenu = true -- Autocomplete the command menu, that is when you type : , so a gui comes up
 vim.opt.showmatch = true --  Highlight the matching paranthesis including [], {}, ()
 vim.opt.title = true -- set the window's title based on the filename
-vim.opt.lazyredraw = true -- don't update screen during macro execution
+-- vim.opt.lazyredraw = true -- don't update screen during macro execution
+-- Not recommended by noice.nvim
 vim.opt.ttyfast = true
 vim.opt.hidden = true -- To hide the files in background instead of closing them
 vim.opt.history = 5000 -- Increase the undolimit to 5000
