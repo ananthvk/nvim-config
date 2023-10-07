@@ -15,10 +15,17 @@ return {
              [[██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║]],
              [[██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║]],
              [[╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝]]}
-        dashboard.section.header.opts = {
-            position = "center",
-            hl = "Type"
-        }
+        dashboard.section.header.opts.position = "center"
+
+        -- Pick a random color for alpha dashboard
+        local function pick_color()
+           math.randomseed(os.time())
+           local list_of_colors = {"String", "Identifier", "Keyword", "Number"}
+           return list_of_colors[math.random(#list_of_colors)]
+        end
+        dashboard.section.header.opts.hl = pick_color()
+
+        -- Configure buttons
         dashboard.section.buttons.val = {dashboard.button("f", "  Find file", ":Telescope find_files <CR>"),
                                          dashboard.button("n", "  New file", ":ene <BAR> startinsert <CR>"),
                                          dashboard.button("r", "  Recent files", ":Telescope oldfiles <CR>"),
@@ -27,13 +34,17 @@ return {
                                          dashboard.button("c", "  Configuration", ":Ex "..config_path.."<CR>"),
                                          dashboard.button("p", "󰂖  Configure lazy", "<Cmd>Lazy<CR>"),
                                          dashboard.button("q", "󰅚  Quit", ":qa<CR>")}
+        dashboard.section.buttons.opts.hl = "Keyword"
+
+        -- Configure footer
         local function footer()
+            -- local date = os.date(" %d-%m-%Y")
+            -- return date .. " while(!(succeed = try()))"
             return "while(!(succeed = try()))"
         end
         dashboard.section.footer.val = footer()
         dashboard.section.footer.opts.hl = "Type"
-        dashboard.section.header.opts.hl = "Include"
-        dashboard.section.buttons.opts.hl = "Keyword"
+
         dashboard.opts.opts.noautocmd = true
         require("alpha").setup(dashboard.config)
     end
