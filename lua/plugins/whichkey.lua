@@ -109,7 +109,8 @@ return {
             ["<leader>fn"] = {"<cmd>enew<cr>", "new file"},
             ["<leader>fd"] = {"<cmd>Telescope live_grep<CR>", "in directory"},
             ["<leader>fw"] = {"<cmd>Telescope grep_string<CR>", "word"},
-            ["<leader>a"] = {"<cmd>Alpha<cr>", "Alpha dashboard"}
+            ["<leader>a"] = {"<cmd>Alpha<cr>", "Alpha dashboard"},
+            ["<c-`>"] = {"<cmd>ToggleTerm<cr>", "Toggle terminal"}
         })
     end
 }

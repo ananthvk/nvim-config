@@ -22,7 +22,16 @@ return {{
     'akinsho/bufferline.nvim',
     version = "*",
     dependencies = 'nvim-tree/nvim-web-devicons',
-    config=function()
-            require("bufferline").setup{}
+    config = function()
+        require("bufferline").setup {}
     end
-}}
+}, {
+    "lukas-reineke/indent-blankline.nvim",
+    main = "ibl",
+    opts = {},
+    config = function()
+        require("ibl").setup()
+    end
+},
+    {'akinsho/toggleterm.nvim', version = "*", opts = {--[[ things you want to change go here]]}}
+}
