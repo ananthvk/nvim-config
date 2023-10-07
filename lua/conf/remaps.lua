@@ -36,7 +36,7 @@ noremap("n", "-", ":move +1<CR>") -- Shifts the line down by one
 noremap("n", "_", ":move -2<CR>") -- Shifts the line up by one
 noremap("n", "<leader>up", "viwU") -- Converts the word under the cursor to uppercase
 noremap("n", "<leader>o", "za") -- Fold block
-noremap("n", "<leader>f", "<c-]>") -- Follow a link(vim help)
+noremap("n", "<leader>g", "<c-]>") -- Follow a link(vim help)
 noremap("n", "<leader>b", "<c-o>") -- Go back(vim help)
 noremap("n", "<leader>n", ":bn<CR>") -- Go to next buffer
 noremap("n", "<leader>i", ":bp<CR>") -- Go to previous buffer
