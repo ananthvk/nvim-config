@@ -44,4 +44,4 @@ vimold
 .vimrc
 
 # cache and other files
-.persist
+.persist/
