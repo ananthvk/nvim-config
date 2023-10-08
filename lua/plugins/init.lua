@@ -32,6 +32,12 @@ return {{
     config = function()
         require("ibl").setup()
     end
-},
-    {'akinsho/toggleterm.nvim', version = "*", opts = {--[[ things you want to change go here]]}}
-}
+}, {
+    'akinsho/toggleterm.nvim',
+    version = "*",
+    opts = { --[[ things you want to change go here]] }
+}, {
+    -- Provides LSP for neovim api
+    "folke/neodev.nvim",
+    opts = {}
+}}

@@ -2,7 +2,7 @@ return {
     'neovim/nvim-lspconfig',
     cmd = {'LspInfo', 'LspInstall', 'LspStart'},
     event = {'BufReadPre', 'BufNewFile'},
-    dependencies = {{'hrsh7th/cmp-nvim-lsp'}, {'williamboman/mason-lspconfig.nvim'}, {'VonHeikemen/lsp-zero.nvim'}},
+    dependencies = {{'hrsh7th/cmp-nvim-lsp'}, {'williamboman/mason-lspconfig.nvim'}, {'VonHeikemen/lsp-zero.nvim'}, {"folke/neodev.nvim"}},
     config = function()
         -- This is where all the LSP shenanigans will live
         local lsp_zero = require('lsp-zero')
@@ -27,29 +27,24 @@ return {
         require('mason-lspconfig').setup({
             -- https://github.com/VonHeikemen/lsp-zero.nvim/blob/v3.x/doc/md/guides/integrate-with-mason-nvim.md
             ensure_installed = {"clangd", -- C, C++
-            "cmake", -- CMake
-            "cssls", -- CSS
-            "bashls", -- Bash
-            "gopls", -- Golang
-            "lua_ls", -- Lua
-            "pyright", -- Python
-            "html", -- HTML
-            "tsserver" -- Javascript, Typescript
+                "cmake", -- CMake
+                "cssls", -- CSS
+                "bashls", -- Bash
+                "gopls", -- Golang
+                "lua_ls", -- Lua
+                "pyright", -- Python
+                "html", -- HTML
+                "tsserver" -- Javascript, Typescript
             },
             handlers = {
                 lsp_zero.default_setup,
                 lua_ls = function()
                     -- (Optional) Configure lua language server for neovim
                     local lua_opts = lsp_zero.nvim_lua_ls()
+                    require("neodev").setup({
+                        -- add any options here, or leave empty to use the default settings
+                    })
                     require('lspconfig').lua_ls.setup(lua_opts)
-                    require('lspconfig').clangd.setup({})
-                    require('lspconfig').cmake.setup({})
-                    require('lspconfig').pyright.setup({})
-                    require('lspconfig').html.setup({})
-                    require('lspconfig').tsserver.setup({})
-                    require('lspconfig').gopls.setup({})
-                    require('lspconfig').bashls.setup({})
-                    require('lspconfig').cssls.setup({})
                 end
             }
         })

@@ -92,7 +92,7 @@ return {
         -- disable the WhichKey popup for certain buf types and file types.
         -- Disabled by default for Telescope
         disable = {
-            buftypes = {},
+            buftypes = {"alpha"},
             filetypes = {}
         }
     },
@@ -103,14 +103,10 @@ return {
             ["<leader>f"] = {
                 name = "+find"
             },
-            ["<leader>ff"] = {"<cmd>Telescope find_files<cr>", "file"},
-            ["<leader>fi"] = {"<cmd>Telescope current_buffer_fuzzy_find<cr>", "in file"},
-            ["<leader>fr"] = {"<cmd>Telescope oldfiles<cr>", "recent files"},
-            ["<leader>fn"] = {"<cmd>enew<cr>", "new file"},
-            ["<leader>fd"] = {"<cmd>Telescope live_grep<CR>", "in directory"},
-            ["<leader>fw"] = {"<cmd>Telescope grep_string<CR>", "word"},
+            -- ["<leader>ff"] = {"<cmd>Telescope find_files<cr>", "file"},
             ["<leader>a"] = {"<cmd>Alpha<cr>", "Alpha dashboard"},
-            ["<c-`>"] = {"<cmd>ToggleTerm<cr>", "Toggle terminal"}
+            ["<c-`>"] = {"<cmd>ToggleTerm<cr>", "Toggle terminal"},
+            ["<leader>fn"] = {"<cmd>enew<cr>", "new file"}
         })
     end
 }
