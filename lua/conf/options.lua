@@ -24,6 +24,7 @@ vim.opt.listchars = {
     extends = '→', -- Characters indicating a wrapped line
     precedes = '←' -- Characters indicating a wrapped line
 }
+
 vim.opt.hlsearch = true -- Enable search highlighting when searching
 vim.opt.ignorecase = true -- Ignore case while searching
 vim.opt.incsearch = true -- Start searching for partial match
