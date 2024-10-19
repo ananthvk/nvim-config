@@ -38,9 +38,8 @@ return {
 
         -- Configure footer
         local function footer()
-            -- local date = os.date(" %d-%m-%Y")
-            -- return date .. " while(!(succeed = try()))"
-            return "while(!(succeed = try()))"
+            local date = os.date(" %d-%m-%Y %H:%M")
+            return date
         end
         dashboard.section.footer.val = footer()
         dashboard.section.footer.opts.hl = "Type"

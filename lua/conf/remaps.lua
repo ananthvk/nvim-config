@@ -1,10 +1,10 @@
 -- Function for *noremaps
 function noremap(mode, mapping, action, desc)
     local options = {
-            noremap = true,
-            silent = true,
-            desc = desc
-        }
+        noremap = true,
+        silent = true,
+        desc = desc
+    }
     vim.keymap.set(mode, mapping, action, options)
 end
 
@@ -58,3 +58,12 @@ noremap("n", "<leader>ve", ":Ex "..vim.fn.stdpath("config").."<CR>")
 -- Changed this to jj because of conflict with jk of zsh vi mode
 noremap("t", "jj", "<C-\\><C-n>") -- Terminal mode jk to Esc
 
+
+-- Key mappings to switch between terminal and last used buffer Ctrl+W and Ctrl+P
+noremap("n", "<A-u>", "<c-w><c-p>")
+noremap("n", "<A-i>", "<c-w><c-p>")
+noremap("i", "<A-u>", "<c-o><c-w><c-p>")
+noremap("i", "<A-i>", "<c-o><c-w><c-p>")
+noremap("t", "<silent>", "<C-[> <C-[>")
+noremap("t", "<A-u>", "<c-w><c-p>")
+noremap("t", "<A-i>", "<c-w><c-p>")

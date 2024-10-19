@@ -80,9 +80,9 @@ return {
         -- triggers = {"<leader>"} -- or specifiy a list manually
         -- list of triggers, where WhichKey should not wait for timeoutlen and show immediately
         triggers_nowait = { -- marks
-        "`", "'", "g`", "g'", -- registers
-        '"', "<c-r>", -- spelling
-        "z="},
+            "`", "'", "g`", "g'", -- registers
+            '"', "<c-r>", -- spelling
+            "z="},
         triggers_blacklist = {
             -- list of mode / prefixes that should never be hooked by WhichKey
             -- this is mostly relevant for keymaps that start with a native binding
@@ -99,14 +99,14 @@ return {
     config = function(_, opts)
         local wk = require("which-key")
         wk.setup({opts})
-        wk.register({
-            ["<leader>f"] = {
-                name = "+find"
-            },
-            -- ["<leader>ff"] = {"<cmd>Telescope find_files<cr>", "file"},
-            ["<leader>a"] = {"<cmd>Alpha<cr>", "Alpha dashboard"},
-            ["<c-`>"] = {"<cmd>ToggleTerm<cr>", "Toggle terminal"},
-            ["<leader>fn"] = {"<cmd>enew<cr>", "new file"}
-        })
+        wk.add(
+            {
+                { "<c-`>", "<cmd>ToggleTerm<cr>", desc = "Toggle terminal" },
+                { "<leader>a", "<cmd>Alpha<cr>", desc = "Alpha dashboard" },
+                { "<leader>f", group = "find" },
+                { "<leader>fn", "<cmd>enew<cr>", desc = "new file" },
+            }
+        )
+
     end
 }
